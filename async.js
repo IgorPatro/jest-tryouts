@@ -1,6 +1,8 @@
-const fetchData = async () => {
-  await new Promise(() => setTimeout(() => "nothing", 2000))
-  return "hello world"
-}
+const axios = require("axios")
+
+const fetchData = () =>
+  axios
+    .get("https://jsonplaceholder.typicode.com/users/1/todos")
+    .then((res) => res.data)
 
 module.exports = fetchData
