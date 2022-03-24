@@ -23,5 +23,3 @@ const shoppingList = ["orange", "apple", "milk"]
 it("includes milk", () => {
   expect(shoppingList).toContain("milk")
 })
-
-// I finished here: https://jestjs.io/docs/mock-functions
