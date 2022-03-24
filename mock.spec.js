@@ -6,6 +6,11 @@ const {
   FruitsService,
 } = require("./mock")
 
+jest.mock("./mock-hooks", () => ({
+  ...jest.requireActual("./mock-hooks"),
+  passApple: () => "not apple",
+}))
+
 it("runs callback for array of numbers", () => {
   const mockCallback = jest.fn((x) => 42 + x)
   interateEachItem([0, 1], mockCallback)
@@ -57,29 +62,9 @@ describe("Jest spyOn()", () => {
   })
 })
 
-describe("Jest mock() without changes", () => {
-  jest.mock("./mock-hooks")
-
-  it("returns banana and apple", () => {
-    expect(FruitsService.giveMeApple()).toEqual("apple")
+describe("Jest mock()", () => {
+  it("returns banana and changed apple hook", () => {
     expect(FruitsService.giveMeBanana()).toEqual("banana")
+    expect(FruitsService.giveMeApple()).toEqual("not apple")
   })
 })
-
-// It is not working
-// describe("Jest mock() with changed hooks", () => {
-//   jest.mock("./mock-hooks", () =>
-//     jest
-//       .fn()
-//       .mockImplementation(() => ({ passApple: jest.fn(() => "not apple") }))
-//   )
-
-//   jest.mock("./mock-hooks")
-//   FruitsService.mockImplementation(() => ({
-//     passApple: () => "not apple",
-//   }))
-
-//   it("returns 'not apple'", () => {
-//     expect(FruitsService.giveMeApple()).toEqual("not apple")
-//   })
-// })

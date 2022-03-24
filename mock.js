@@ -1,4 +1,4 @@
-const mockHooks = require("./mock-hooks")
+const { passBanana, passApple } = require("./mock-hooks")
 
 const interateEachItem = (items, callback) => {
   for (let index = 0; index < items.length; index++) {
@@ -29,10 +29,10 @@ const DataServiceInstance = new DataService()
 
 class FruitsService {
   static giveMeBanana() {
-    return mockHooks.passBanana()
+    return passBanana()
   }
   static giveMeApple() {
-    return mockHooks.passApple()
+    return passApple()
   }
 }
 

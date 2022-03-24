@@ -1,6 +1,4 @@
-const mockHooks = {
-  passBanana: () => "banana",
-  passApple: () => "apple",
-}
+const passBanana = () => "banana"
+const passApple = () => "apple"
 
-module.exports = mockHooks
+module.exports = { passBanana, passApple }
