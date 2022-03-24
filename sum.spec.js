@@ -18,8 +18,10 @@ it("includes /stop/", () => {
   expect("Christopmas").toMatch(/stop/)
 })
 
-shoppingList = ["orange", "apple", "milk"]
+const shoppingList = ["orange", "apple", "milk"]
 
 it("includes milk", () => {
   expect(shoppingList).toContain("milk")
 })
+
+// I finished here: https://jestjs.io/docs/mock-functions

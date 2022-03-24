@@ -12,6 +12,4 @@ it("returns array of todos", async () => {
 
   expect(data).toBeDefined()
   expect(data).toEqual(expect.arrayContaining([expectedTodo]))
-
-  // expect(data).toMatchObject(todoModel)
 })
