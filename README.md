@@ -3,7 +3,7 @@
 ## Status: ````In progress````
 
 ## Description
-Private Jest tryouts
+Learning Jest
 
 ## Technologies
 - Jest
